@@ -1,0 +1,6 @@
+Known Issues
+============
+
+- The Bezier V-handles are implemented as Python-based Gizmos. It is important to understand that Blender's native control point handle interface is hardcoded in C++. This makes it impossible to fully replicate their behavior with the gizmo system — particularly the ability to select and transform handles using standard operators as if they were regular points.
+
+- After moving a gizmo handle, if you want to execute any Transform Loft Handles operator, reselect the point you're editing first. Otherwise the change done by the gizmo won't be remembered for some unresolved issue. It might be due to a Blender bug, undocumented API behavior, or an implementation oversight on our side.

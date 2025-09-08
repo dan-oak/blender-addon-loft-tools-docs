@@ -1,0 +1,73 @@
+Loft Tools Blender Add-on
+#########################
+
+.. warning::
+
+    This is a documentation for an unreleased Blender add-on. To be released soon.
+
+Introduction
+============
+
+In 3D modelling, **Lofting** is a method to create smooth surfaces from curve profiles.
+You define cross-sections of the desired shape at chosen locations and
+a software builds a smooth 3D shape that fit those cross-sections.
+
+This Blender add-on, **Loft Tools**, works with `Curves data-blocks`_ as input cross-sections,
+and outputs a `Mesh`_ that that smoothly joins the input cross-sections using `Geometry Nodes`_.
+
+Main Features
+=============
+
+.. raw:: html
+
+    <div style="margin-bottom: 2em; display: flex; justify-content: center;">
+        <iframe width="640" height="360"
+            src="https://www.youtube.com/embed/eg8UtynG6zI?si=YnEkvhPdqY64ZZHz"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+- At the core of the add-on, there is Geometry Nodes Modifier.
+
+- A set of basic lofted shapes to start with.
+
+- Pie Menu and Sidebar panel in 3D View with all essential operators.
+
+- Set Loft Curve/Handle Type both on U and V axes.
+  The curves that define cross-sections are called **U Curves**,
+  and the curves that join them and form the lofted mesh — **V Curves**.
+
+- Gizmos for Bezier handles on V axes and Handles Transform operators.
+
+- A single geometry can have separate and independent lofted surfaces. Loft Group operators allow selecting, separating, and merging the surfaces.
+
+- Common Curves utilities have the corresponding Loft variants:
+
+  - Toggle Loft Cyclic operator allows creating loops on both U and V axes.
+
+  - Subdivide Loft Segments operator adds cross-sections naturally along the existing lofted surface.
+
+  - Duplicate in Loft Group. When duplicating a curve, you can control where you add it, before or after the selected curve.
+
+- NURBS surface order, knots mode, and weight parameters can be edited with dedicated operators.
+
+.. note::
+
+    Supported Blender version: 4.5
+
+.. _Curves data-blocks: https://docs.blender.org/manual/en/4.5/modeling/curves_new/index.html
+.. _Mesh: https://docs.blender.org/manual/en/4.5/modeling/meshes/index.html
+.. _Geometry Nodes: https://docs.blender.org/manual/en/4.5/modeling/geometry_nodes/index.html
+
+.. toctree::
+    :caption: Table of Contents
+
+    overview
+    guides
+    reference
+    issues
+    credits

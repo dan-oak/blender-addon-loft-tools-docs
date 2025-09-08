@@ -1,0 +1,14 @@
+Guides
+######
+
+.. image:: /_static/images/guides/potion_bottle.png
+    :width: 50 %
+
+.. toctree::
+    guides/potion-bottle
+
+.. image:: /_static/images/guides/khinkali.png
+    :width: 50 %
+
+.. toctree::
+    guides/khinkali

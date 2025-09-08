@@ -1,0 +1,67 @@
+2. Khinkali
+===========
+
+.. image:: /_static/images/guides/khinkali.png
+
+Learn to model a simple `khinkali`_ dumpling with its signature spiral pleats.
+
+.. _khinkali: https://en.wikipedia.org/wiki/Khinkali
+
+1. Create Base Shape
+::::::::::::::::::::
+
+Start by adding a preset cylinder object from the add-on's library.
+This consists of two lofted Bezier circles with filled caps.
+
+.. image:: /_static/images/guides/100_add_loft_cylinder.png
+
+1. Enter **Edit Mode**
+2. Select all points
+3. Convert V curves to **Bezier** using the **Set V Curve Type** operator
+   (located in the "Loft Tools" panel of the 3D View sidebar)
+4. Set V handles to **Auto** using the **Set V Handle Type** operator
+
+.. image:: /_static/images/guides/102_sidebar.png
+
+2. Subdivide Curves
+:::::::::::::::::::
+
+Use **Subdivide Loft Segments** for both axes:
+
+- **U curves**: 16 points
+- **V axis**: 6 curves, subdivide the cylinder into 4 segments (yielding 5
+  cross-section circles), duplicate the top circle to add a sixth circle
+
+.. image:: /_static/images/guides/110_subdivide_v.png
+.. image:: /_static/images/guides/110_subdivide_u.png
+
+Adjust mesh resolution using **Resample parameters** in the modifier
+(same as in the Potion Bottle tutorial).
+
+3. Shape the Dumpling
+:::::::::::::::::::::
+
+Use transform tools to create this shape:
+1. Create a wide, smooth base by positioning 3 circles close together at the bottom
+2. Maintain a long stretch between the base and top without intermediate cross-sections
+3. Scale the top 3 circles to your preferred size
+
+.. image:: /_static/images/guides/120_shape_base.png
+
+4. Create Pleats
+::::::::::::::::
+
+1. Switch to **Point Select Mode**
+2. On the top circle at the dumpling base - select every other control point
+3. Scale these points inward simultaneously toward the center
+
+.. image:: /_static/images/guides/122_shape_pleats.png
+
+5. Add Twist
+::::::::::::
+
+1. Select all circles forming the top part of the dumpling
+2. Rotate them around the **Z axis** to create twisting for the pleats
+3. Manually adjust individual points to add variation to the shape
+
+.. image:: /_static/images/guides/124_shape_final.png

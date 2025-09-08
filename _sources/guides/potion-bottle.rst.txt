@@ -1,0 +1,74 @@
+.. _guide-potion-bottle:
+
+1. Potion Bottle
+================
+
+.. image:: /_static/images/guides/potion_bottle.png
+
+Make your first steps with the Loft Tools add-on.
+
+1. Create Base Curve
+::::::::::::::::::::
+
+1. Add a Bezier circle
+
+2. Convert it to **Curves** using the **Convert To** operator (``object.convert``)
+
+.. image:: /_static/images/guides/convert_to_curves.png
+
+.. image:: /_static/images/guides/004_bezier_circle.png
+
+2. Create Loft Surface
+::::::::::::::::::::::
+
+Execute the **Loft Curves** operator. This will add loft geometry modifier and
+required attributes.
+
+.. image:: /_static/images/guides/008_modifier.png
+.. image:: /_static/images/guides/010_attributes.png
+
+3. Shape the Bottle
+:::::::::::::::::::
+
+1. **Duplicate** curves using ``curves.duplicate`` to form the bottle's base shape
+
+2. The lofted surface will have the default detalization. Adjust resampling **Length**.
+
+   - The base curves that control cross-sections of the shape are **U Curves**.
+
+   - The curves that connect the cross-sections and form the final mesh are **V Curves**.
+
+.. image:: /_static/images/guides/012_shape.png
+.. image:: /_static/images/guides/012_shape_2.png
+
+4. Adjust Handles
+:::::::::::::::::
+
+Select the middle curve and set **V Handle Type** to **Auto**.
+
+.. image:: /_static/images/guides/014_handles_auto.png
+
+In **Point Selection Mode**:
+
+- Edit U Curves using Blender's built-in handles as usual
+
+- Shape V Curves using the add-on's handle gizmos - the handles appear for
+  the first selected point on V Curves
+
+The gizmo handles mimic the behaviour of the built-in handles, so by dragging
+an Auto handle, it will automatically change its type to Align.
+
+.. image:: /_static/images/guides/016_handles_2.png
+
+5. Cap the Bottle
+:::::::::::::::::
+
+1. Add the **Fill Loft Caps** modifier after the main Loft modifier
+
+.. image:: /_static/images/guides/018_fill_caps.png
+
+2. Check **Flip First** or **Flip Last** to have the correct orientation of
+the normals in the resulting mesh.
+
+.. image:: /_static/images/guides/018_fill_caps_1.png
+.. image:: /_static/images/guides/018_fill_caps_2.png

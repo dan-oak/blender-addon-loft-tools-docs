@@ -1,0 +1,1400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference &mdash; Loft Tools Blender Add-on  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/rtd-list-spacings-fix.css?v=87d29599" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known Issues" href="issues.html" />
+    <link rel="prev" title="2. Khinkali" href="guides/khinkali.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Loft Tools Blender Add-on
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#core-nodes">Core Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#id1">Tool Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#python-components">Python Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#handles">Handles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#operators">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#asset-library-path">Asset Library Path</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#hair-curves-requirement">Hair Curves Requirement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/potion-bottle.html">1. Potion Bottle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/potion-bottle.html#create-base-curve">1. Create Base Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/potion-bottle.html#create-loft-surface">2. Create Loft Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/potion-bottle.html#shape-the-bottle">3. Shape the Bottle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/potion-bottle.html#adjust-handles">4. Adjust Handles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/potion-bottle.html#cap-the-bottle">5. Cap the Bottle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/khinkali.html">2. Khinkali</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/khinkali.html#create-base-shape">1. Create Base Shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/khinkali.html#subdivide-curves">2. Subdivide Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/khinkali.html#shape-the-dumpling">3. Shape the Dumpling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/khinkali.html#create-pleats">4. Create Pleats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/khinkali.html#add-twist">5. Add Twist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#write">Write</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-group-tdltn">Set Loft Group | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-cyclic-tdltn">Set Loft Cyclic | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-spline-type-tdltn">Set Loft Spline Type | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bezier">Bezier</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#set-loft-handle-type-tdltn">Set Loft Handle Type | TDLTN</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-loft-handle-position-tdltn">Set Loft Handle Position | TDLTN</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#nurbs">NURBS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#set-nurbs-weight-tdltn">Set NURBS Weight | TDLTN</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-nurbs-knots-tdltn">Set NURBS Knots | TDLTN</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-nurbs-order-tdltn">Set NURBS Order | TDLTN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#read">Read</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loft-parameter-tdltn">Loft Parameter | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-uv-parameter-tdltn">Loft UV Parameter | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#is-loft-cyclic-tdltn">Is Loft Cyclic | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-length-tdltn">Loft Length | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-group-id-tdltn">Loft Group ID | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-normal-tdltn">Loft Normal | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-tangent-tdltn">Loft Tangent | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-info-tdltn">Loft Info | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-endpoint-selection-tdltn">Loft Endpoint Selection | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-handle-positions-tdltn">Loft Handle Positions | TDLTN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#operations">Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mesh-to-loft-curves-tdltn">Mesh to Loft Curves | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-curves-tdltn">Loft Curves | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fill-loft-caps-tdltn">Fill Loft Caps | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer-data-from-loft-curves-tdltn">Transfer Data from Loft Curves | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer-data-from-loft-surface-tdltn">Transfer Data from Loft Surface | TDLTN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilities">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loft-selection-tdltn">Loft Selection | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-uv-map-tdltn">Loft UV Map | TDLTN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sample">Sample</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#index-of-loft-curve-tdltn">Index of Loft Curve | TDLTN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loft-nurbs-tdltn">Loft NURBS | TDLTN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operators">Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-preset-objects">Add Preset Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-empty">Add Loft Empty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-bezier-tube">Add Loft Bézier Tube</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-bezier-torus">Add Loft Bézier Torus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-bezier-surface">Add Loft Bézier Surface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-poly-cube">Add Loft Poly Cube</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-loft-cone">Add Loft Loft Cone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-loft-cylinder">Add Loft Loft Cylinder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-catmull-rom-cylinder">Add Loft Catmull-Rom Cylinder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-loft-nurbs-cone">Add Loft NURBS Cone</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#loft-un-loft">Loft / Un-Loft</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loft-curves">Loft Curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#un-loft-curves">Un-Loft Curves</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ui">UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#call-loft-curves-menu">Call Loft Curves Menu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#call-loft-curves-handles-transform-menu">Call Loft Curves Handles Transform Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#store-loft-attributes">Store Loft Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-loft-attributes">Remove Loft Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#curve-handle-types">Curve &amp; Handle Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-curve-type">Set Loft Curve Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-handle-type">Set Loft Handle Type</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#groups">Groups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#select-loft-group">Select Loft Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merge-loft-group">Merge Loft Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#separate-loft-group">Separate Loft Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sort-loft-curves-in-group">Sort Loft Curves in Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sort-by-nearest">Sort by Nearest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toggle-loft-cyclic">Toggle Loft Cyclic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#switch-loft-direction">Switch Loft Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subdivide-loft-segments">Subdivide Loft Segments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-in-loft-group">Duplicate in Loft Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-separated-from-loft-group-and-move">Duplicate Separated from Loft Group and Move</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-in-loft-group-and-move">Duplicate in Loft Group and Move</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">NURBS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-nurbs-order">Set Loft NURBS Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-nurbs-knots-mode">Set Loft NURBS Knots Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-loft-nurbs-weight">Set Loft NURBS Weight</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bezier-handles">Bezier Handles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#translate-loft-handles">Translate Loft Handles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotate-loft-handles">Rotate Loft Handles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scale-loft-handles">Scale Loft Handles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#handles">Handles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#align-loft-handles-to-cursor">Align Loft Handles to Cursor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gizmos">Gizmos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loft-bezier-handles">Loft Bézier Handles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menus">Menus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loft-tools">Loft Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Loft Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loft-handles-transform">Loft Handles Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Loft Handles Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#panels">Panels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loft-tools-loft-tools">Loft Tools &gt; Loft Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loft-tools-loft-tools-preferences">Loft Tools &gt; Loft Tools Preferences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#key-bindings">Key-bindings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#curves">Curves</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Loft Tools Blender Add-on</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Reference</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h1>
+<section id="nodes">
+<h2>Nodes<a class="headerlink" href="#nodes" title="Link to this heading"></a></h2>
+<section id="write">
+<h3>Write<a class="headerlink" href="#write" title="Link to this heading"></a></h3>
+<section id="set-loft-group-tdltn">
+<h4>Set Loft Group | TDLTN<a class="headerlink" href="#set-loft-group-tdltn" title="Link to this heading"></a></h4>
+<p>Set Group ID value on curves to loft each Group separately.</p>
+<img alt="_images/Set_Loft_Group___TDLTN.png" src="_images/Set_Loft_Group___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Group ID</strong> (Input Int) - Split Curves into groups, which can be lofted separately. By default loft all curves.</p></li>
+</ul>
+</section>
+<section id="set-loft-cyclic-tdltn">
+<h4>Set Loft Cyclic | TDLTN<a class="headerlink" href="#set-loft-cyclic-tdltn" title="Link to this heading"></a></h4>
+<p>Set whether the loft is cyclic along the chosen axis (U or V). Useful for connecting ends of lofts into loops or tubes.</p>
+<img alt="_images/Set_Loft_Cyclic___TDLTN.png" src="_images/Set_Loft_Cyclic___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Axis</strong> (Input Menu) - Choose the direction to apply cyclic behavior.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Cyclic</strong> (Input Bool) - Enables or disables cyclic behavior along the selected axis for the selected loft groups.</p></li>
+</ul>
+</section>
+<section id="set-loft-spline-type-tdltn">
+<h4>Set Loft Spline Type | TDLTN<a class="headerlink" href="#set-loft-spline-type-tdltn" title="Link to this heading"></a></h4>
+<p>Set spline type of loft curves, generated in Loft Curves node.</p>
+<img alt="_images/Set_Loft_Spline_Type___TDLTN.png" src="_images/Set_Loft_Spline_Type___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Type</strong> (Input Menu) - The curve type to change the selected curves to.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+</ul>
+</section>
+<section id="bezier">
+<h4>Bezier<a class="headerlink" href="#bezier" title="Link to this heading"></a></h4>
+<section id="set-loft-handle-type-tdltn">
+<h5>Set Loft Handle Type | TDLTN<a class="headerlink" href="#set-loft-handle-type-tdltn" title="Link to this heading"></a></h5>
+<p>Set the handle type for the control points of a loft Bézier curve.</p>
+<img alt="_images/Set_Loft_Handle_Type___TDLTN.png" src="_images/Set_Loft_Handle_Type___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Mode</strong> (Input Menu) - Whether to update left and right handles.</p></li>
+<li><p><strong>Handle Type</strong> (Input Menu)</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+</ul>
+</section>
+<section id="set-loft-handle-position-tdltn">
+<h5>Set Loft Handle Position | TDLTN<a class="headerlink" href="#set-loft-handle-position-tdltn" title="Link to this heading"></a></h5>
+<p>Set the positions for the handles of loft Bézier curves.</p>
+<img alt="_images/Set_Loft_Handle_Position___TDLTN.png" src="_images/Set_Loft_Handle_Position___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Mode</strong> (Input Menu) - Whether to update left and right handles.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Position</strong> (Input Vector)</p></li>
+<li><p><strong>Offset</strong> (Input Vector)</p></li>
+</ul>
+</section>
+</section>
+<section id="nurbs">
+<h4>NURBS<a class="headerlink" href="#nurbs" title="Link to this heading"></a></h4>
+<section id="set-nurbs-weight-tdltn">
+<h5>Set NURBS Weight | TDLTN<a class="headerlink" href="#set-nurbs-weight-tdltn" title="Link to this heading"></a></h5>
+<p>Sets the weight of control points in a loft NURBS curve, influencing how strongly each point pulls the curve toward itself. Higher weights make the curve pass closer to the control point.</p>
+<img alt="_images/Set_NURBS_Weight___TDLTN.png" src="_images/Set_NURBS_Weight___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Axis</strong> (Input Menu) - Choose direction of loft curves.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Weight</strong> (Input Float) - Value controlling the influence of each control point. A weight of 1.0 is standard; higher values increase pull, lower values reduce it.</p></li>
+</ul>
+</section>
+<section id="set-nurbs-knots-tdltn">
+<h5>Set NURBS Knots | TDLTN<a class="headerlink" href="#set-nurbs-knots-tdltn" title="Link to this heading"></a></h5>
+<p>Assigns a custom knot vector to a NURBS curve. Knot values determine how control points influence the curve’s shape and parameterization.</p>
+<img alt="_images/Set_NURBS_Knots___TDLTN.png" src="_images/Set_NURBS_Knots___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Axis</strong> (Input Menu) - Choose direction of loft curves.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Bézier</strong> (Input Bool) - Make this nurbs curve or surface act like a Bézier spline in the UV direction.</p></li>
+<li><p><strong>Endpoint</strong> (Input Bool) - Make this NURBS curve or surface meet the endpoints in the UV direction.</p></li>
+</ul>
+</section>
+<section id="set-nurbs-order-tdltn">
+<h5>Set NURBS Order | TDLTN<a class="headerlink" href="#set-nurbs-order-tdltn" title="Link to this heading"></a></h5>
+<p>Sets the mathematical order of the NURBS curve, which defines how many control points influence each segment. Higher orders produce smoother curves but require more control points.</p>
+<img alt="_images/Set_NURBS_Order___TDLTN.png" src="_images/Set_NURBS_Order___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curve</strong> (Output Geometry)</p></li>
+<li><p><strong>Curve</strong> (Input Geometry)</p></li>
+<li><p><strong>Axis</strong> (Input Menu) - Choose direction of loft curves.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p><strong>Order</strong> (Input Int) - NURBS order in the UV direction. Higher values make each point influence a greater area, but have worse performance.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="read">
+<h3>Read<a class="headerlink" href="#read" title="Link to this heading"></a></h3>
+<section id="loft-parameter-tdltn">
+<h4>Loft Parameter | TDLTN<a class="headerlink" href="#loft-parameter-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve how far along each loft axis a control point is.</p>
+<img alt="_images/Loft_Parameter___TDLTN.png" src="_images/Loft_Parameter___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Factor</strong> (Output Float) - The portion of the loft’s U axis total length at the control point.</p></li>
+<li><p><strong>Length</strong> (Output Float) - Distance of control points along the loft U axis.</p></li>
+<li><p><strong>Index</strong> (Output Int) - Each control point’s index on loft U axis.</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Factor</strong> (Output Float) - The portion of the loft’s V axis total length at the control point.</p></li>
+<li><p><strong>Length</strong> (Output Float) - Distance of control points along the loft V axis.</p></li>
+<li><p><strong>Index</strong> (Output Int) - Each control point’s index on loft V axis.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-uv-parameter-tdltn">
+<h4>Loft UV Parameter | TDLTN<a class="headerlink" href="#loft-uv-parameter-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve how far along each loft surface corner a control point is.</p>
+<img alt="_images/Loft_UV_Parameter___TDLTN.png" src="_images/Loft_UV_Parameter___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Factor</strong> (Output Float) - The portion of the loft’s V axis total length at the loop.</p></li>
+<li><p><strong>Length</strong> (Output Float) - Distance of loops along the loft V axis.</p></li>
+<li><p><strong>Index</strong> (Output Int) - Each loop index on loft V axis.</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Factor</strong> (Output Float) - The portion of the loft’s V axis total length at the loop.</p></li>
+<li><p><strong>Length</strong> (Output Float) - Distance of loops along the loft V axis.</p></li>
+<li><p><strong>Index</strong> (Output Int) - Each loop index on loft V axis.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="is-loft-cyclic-tdltn">
+<h4>Is Loft Cyclic | TDLTN<a class="headerlink" href="#is-loft-cyclic-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve whether each loft loop connects back to its starting profile, forming a closed surface.</p>
+<img alt="_images/Is_Loft_Cyclic___TDLTN.png" src="_images/Is_Loft_Cyclic___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Cyclic</strong> (Output Bool)</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Cyclic</strong> (Output Bool)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-length-tdltn">
+<h4>Loft Length | TDLTN<a class="headerlink" href="#loft-length-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve the total length and number of points along the U and V directions of the lofted surface.</p>
+<img alt="_images/Loft_Length___TDLTN.png" src="_images/Loft_Length___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Length</strong> (Output Float)</p></li>
+<li><p><strong>Point Count</strong> (Output Int)</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Length</strong> (Output Float)</p></li>
+<li><p><strong>Point Count</strong> (Output Int)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-group-id-tdltn">
+<h4>Loft Group ID | TDLTN<a class="headerlink" href="#loft-group-id-tdltn" title="Link to this heading"></a></h4>
+<img alt="_images/Loft_Group_ID___TDLTN.png" src="_images/Loft_Group_ID___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Group ID</strong> (Output Int)</p></li>
+<li><p><strong>Map ID</strong> (Input Bool) - Sort all IDs into a list starting from 0.</p></li>
+</ul>
+</section>
+<section id="loft-normal-tdltn">
+<h4>Loft Normal | TDLTN<a class="headerlink" href="#loft-normal-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve a unit length vector indicating the direction pointing away from the geometry at each element.</p>
+<img alt="_images/Loft_Normal___TDLTN.png" src="_images/Loft_Normal___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Normal</strong> (Output Vector)</p></li>
+</ul>
+</section>
+<section id="loft-tangent-tdltn">
+<h4>Loft Tangent | TDLTN<a class="headerlink" href="#loft-tangent-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve the direction of axis at each control point.</p>
+<img alt="_images/Loft_Tangent___TDLTN.png" src="_images/Loft_Tangent___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Tangent</strong> (Output Vector)</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Tangent</strong> (Output Vector)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-info-tdltn">
+<h4>Loft Info | TDLTN<a class="headerlink" href="#loft-info-tdltn" title="Link to this heading"></a></h4>
+<img alt="_images/Loft_Info___TDLTN.png" src="_images/Loft_Info___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Is Surface</strong> (Output Bool)</p></li>
+<li><p><strong>Is Curve</strong> (Output Bool)</p></li>
+<li><p><strong>Loft Axis</strong> (Output Int)</p></li>
+</ul>
+</section>
+<section id="loft-endpoint-selection-tdltn">
+<h4>Loft Endpoint Selection | TDLTN<a class="headerlink" href="#loft-endpoint-selection-tdltn" title="Link to this heading"></a></h4>
+<p>Provide a selection for an arbitrary number of endpoints in each loft group axis.</p>
+<img alt="_images/Loft_Endpoint_Selection___TDLTN.png" src="_images/Loft_Endpoint_Selection___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p>U:</p>
+<ul>
+<li><p><strong>Selection</strong> (Output Bool) - The selection from the start and end of the U axis based on the input sizes.</p></li>
+<li><p><strong>Start Size</strong> (Input Int) - The amount of points to select from the start of loft group U axis.</p></li>
+<li><p><strong>End Size</strong> (Input Int) - The amount of points to select from the end of loft group U axis.</p></li>
+</ul>
+</li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Selection</strong> (Output Bool) - The selection from the start and end of the V axis based on the input sizes.</p></li>
+<li><p><strong>Start Size</strong> (Input Int) - The amount of points to select from the start of loft group V axis.</p></li>
+<li><p><strong>End Size</strong> (Input Int) - The amount of points to select from the end of loft group V axis.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-handle-positions-tdltn">
+<h4>Loft Handle Positions | TDLTN<a class="headerlink" href="#loft-handle-positions-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieve the position of each  V Loft  Bézier  control point’s handles.</p>
+<img alt="_images/Loft_Handle_Positions___TDLTN.png" src="_images/Loft_Handle_Positions___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Left</strong> (Output Vector)</p></li>
+<li><p><strong>Right</strong> (Output Vector)</p></li>
+<li><p><strong>Relative</strong> (Input Bool) - Output the handle positions relative to the corresponding control point instead of in the local space of the geometry.</p></li>
+</ul>
+</section>
+</section>
+<section id="operations">
+<h3>Operations<a class="headerlink" href="#operations" title="Link to this heading"></a></h3>
+<section id="mesh-to-loft-curves-tdltn">
+<h4>Mesh to Loft Curves | TDLTN<a class="headerlink" href="#mesh-to-loft-curves-tdltn" title="Link to this heading"></a></h4>
+<p>Convert mesh edges to loft curves. Store basic set of required attributes.</p>
+<img alt="_images/Mesh_to_Loft_Curves___TDLTN.png" src="_images/Mesh_to_Loft_Curves___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Curves</strong> (Output Geometry)</p></li>
+<li><p><strong>Geometry</strong> (Input Geometry)</p></li>
+<li><p><strong>Edge Input</strong> (Input Menu)</p></li>
+<li><p><strong>Edges</strong> (Input Geometry)</p></li>
+<li><p><strong>Edges</strong> (Input Object)</p></li>
+<li><p><strong>Edges</strong> (Input Collection)</p></li>
+<li><p><strong>Curve Type</strong> (Input Menu) - The curve to change the selected curves to.</p></li>
+<li><p><strong>U Cyclic</strong> (Input Bool) - Make selected group of curves a closed loop in the U direction.</p></li>
+<li><p><strong>V Cyclic</strong> (Input Bool) - Make selected group of curves a closed loop in the V direction.</p></li>
+<li><p><strong>Selection</strong> (Input Bool)</p></li>
+<li><p>Bézier:</p>
+<ul>
+<li><p><strong>Bézier Handle Type</strong> (Input Menu)</p></li>
+</ul>
+</li>
+<li><p>NURBS:</p>
+<ul>
+<li><p><strong>NURBS Bézier</strong> (Input Bool) - Make this nurbs curve or surface act like a Bézier spline in the U direction.</p></li>
+<li><p><strong>NURBS Endpoint</strong> (Input Bool) - Make this NURBS curve or surface meet the endpoints in the U direction.</p></li>
+<li><p><strong>Order</strong> (Input Int)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loft-curves-tdltn">
+<h4>Loft Curves | TDLTN<a class="headerlink" href="#loft-curves-tdltn" title="Link to this heading"></a></h4>
+<p>Sample points along the input splines and connecting them in a specified order to generate a smooth mesh surface.</p>
+<img alt="_images/Loft_Curves___TDLTN.png" src="_images/Loft_Curves___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Geometry</strong> (Output Geometry)</p></li>
+<li><p><strong>UV Map</strong> (Output Vector)</p></li>
+<li><p><strong>Curves</strong> (Input Geometry)</p></li>
+<li><p>Grouping:</p>
+<ul>
+<li><p><strong>Group ID</strong> (Output Int)</p></li>
+<li><p><strong>Group ID</strong> (Input Int) - Split Curves into groups, which can be lofted separately. By default loft all curves.</p></li>
+<li><p><strong>Resample Group</strong> (Input Menu) - How to resample all curves in a Loft group.</p></li>
+</ul>
+</li>
+<li><p>U Curves:</p>
+<ul>
+<li><p><strong>U Curves</strong> (Output Geometry)</p></li>
+<li><p><strong>Resample Type</strong> (Input Menu) - How to specify the amount of samples.</p></li>
+<li><p><strong>Method</strong> (Input Menu) - How to generate poly spline.</p></li>
+<li><p><strong>Count</strong> (Input Int)</p></li>
+<li><p><strong>Length</strong> (Input Float)</p></li>
+<li><p><strong>Even Topology</strong> (Input Float) - Distribute the control points of the resampled U curve evenly.</p></li>
+</ul>
+</li>
+<li><p>V Curves:</p>
+<ul>
+<li><p><strong>V Curves</strong> (Output Geometry)</p></li>
+<li><p><strong>Resample Type</strong> (Input Menu) - How to specify the amount of samples.</p></li>
+<li><p><strong>Method</strong> (Input Menu) - How to generate poly spline.</p></li>
+<li><p><strong>Count</strong> (Input Int)</p></li>
+<li><p><strong>Length</strong> (Input Float)</p></li>
+<li><p><strong>Even Topology</strong> (Input Float) - Distribute the control points of the resampled V curve evenly.</p></li>
+<li><p><strong>Interpolation</strong> (Input Menu) - Choose how to interpolate V-axis curves Bézier handles, NURBS weight. Parameters are stored on U-axis curves and have linear interpolation by default.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fill-loft-caps-tdltn">
+<h4>Fill Loft Caps | TDLTN<a class="headerlink" href="#fill-loft-caps-tdltn" title="Link to this heading"></a></h4>
+<p>Fill the First or Last profiles of a loft surface, closing the open loft surface or cross-section.</p>
+<img alt="_images/Fill_Loft_Caps___TDLTN.png" src="_images/Fill_Loft_Caps___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Geometry</strong> (Output Geometry)</p></li>
+<li><p><strong>Filled Caps</strong> (Output Bool)</p></li>
+<li><p><strong>Geometry</strong> (Input Geometry)</p></li>
+<li><p><strong>Filling Method</strong> (Input Menu) - Determines how the caps are constructed.</p></li>
+<li><p><strong>Cuts</strong> (Input Int) - Divide the fill mesh into a specified number of segments.</p></li>
+<li><p><strong>Smooth</strong> (Input Int) - How many times to blur mesh filling.</p></li>
+<li><p><strong>Fill First</strong> (Input Bool) - Enable filling at the start of the loft (first U profile).</p></li>
+<li><p><strong>Flip First</strong> (Input Bool) - Reverses normal direction of the first cap.</p></li>
+<li><p><strong>Fill Last</strong> (Input Bool) - Enable filling at the end of the loft (last U profile).</p></li>
+<li><p><strong>Flip Last</strong> (Input Bool) - Reverse normal direction of the last cap.</p></li>
+<li><p><strong>Material offset</strong> (Input Int)</p></li>
+<li><p>Merge by Distance:</p>
+<ul>
+<li><p><strong>Merge by Distance</strong> (Input Bool)</p></li>
+<li><p><strong>Merge by Distance</strong> (Input Menu)</p></li>
+<li><p><strong>Distance</strong> (Input Float) - Threshold distance used for merging points.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="transfer-data-from-loft-curves-tdltn">
+<h4>Transfer Data from Loft Curves | TDLTN<a class="headerlink" href="#transfer-data-from-loft-curves-tdltn" title="Link to this heading"></a></h4>
+<p>Transfer attribute or field from Loft Curves to the generated loft surface on point domain.</p>
+<img alt="_images/Transfer_Data_from_Loft_Curves___TDLTN.png" src="_images/Transfer_Data_from_Loft_Curves___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Geometry</strong> (Output Geometry)</p></li>
+<li><p><strong>Geometry</strong> (Input Geometry)</p></li>
+<li><p><strong>Loft Curves Input</strong> (Input Menu)</p></li>
+<li><p><strong>Loft Curves</strong> (Input Geometry) - U or V Curves used in the lofting process. Must match the geometry generated by the Loft Curves node.</p></li>
+<li><p><strong>Loft Curves</strong> (Input Object)</p></li>
+<li><p><strong>Loft Curves</strong> (Input Collection)</p></li>
+<li><p><strong>Sample Method</strong> (Input Menu)</p></li>
+<li><p><strong>Loft Axis</strong> (Input Menu) - Select which axis to sample from. Some attributes can only be accessed from a specific axis.</p></li>
+<li><p><strong>Attribute Type</strong> (Input Menu) - Specify whether to use the attribute by name or plug it manually.</p></li>
+<li><p><strong>Data Type</strong> (Input Menu) - Define the type of attribute to sample from the Loft Curves. Must match the type of the source attribute name.</p></li>
+<li><p><strong>Attribute</strong> (Input String) - Name of the attribute to transfer from the Loft Curves. This attribute must exist on the source curves.</p></li>
+<li><p><strong>Store Attribute</strong> (Input String) - Name of an custom attribute to store on Surface.</p></li>
+<li><p><strong>Value</strong> (Input Float)</p></li>
+<li><p><strong>Value</strong> (Input Int)</p></li>
+<li><p><strong>Value</strong> (Input Vector)</p></li>
+<li><p><strong>Value</strong> (Input Color)</p></li>
+<li><p><strong>Value</strong> (Input Bool)</p></li>
+<li><p><strong>Value</strong> (Input Rotation)</p></li>
+<li><p><strong>Value</strong> (Input Matrix)</p></li>
+<li><p><strong>Sample Position</strong> (Input Vector)</p></li>
+<li><p>Blur:</p>
+<ul>
+<li><p><strong>Iterations</strong> (Input Int) - Number of blur passes to apply on the transferred attribute. Helps smooth sharp transitions between curves or groups.</p></li>
+<li><p><strong>Lock Boundaries</strong> (Input Bool) - Prevents blurring across the outermost edge curves. Useful for preserving crisp edges on open loft surfaces.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="transfer-data-from-loft-surface-tdltn">
+<h4>Transfer Data from Loft Surface | TDLTN<a class="headerlink" href="#transfer-data-from-loft-surface-tdltn" title="Link to this heading"></a></h4>
+<p>Transfer attribute or field from Loft Surface to nearest geometry.</p>
+<img alt="_images/Transfer_Data_from_Loft_Surface___TDLTN.png" src="_images/Transfer_Data_from_Loft_Surface___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Geometry</strong> (Output Geometry)</p></li>
+<li><p><strong>Geometry</strong> (Input Geometry)</p></li>
+<li><p><strong>Loft Surface Input</strong> (Input Menu)</p></li>
+<li><p><strong>Loft Surface</strong> (Input Geometry) - U or V Curves used in the lofting process. Must match the geometry generated by the Loft Curves node.</p></li>
+<li><p><strong>Loft Surface</strong> (Input Object)</p></li>
+<li><p><strong>Loft Surface</strong> (Input Collection)</p></li>
+<li><p><strong>Attribute Type</strong> (Input Menu) - Specify whether to use the attribute by name or plug it manually.</p></li>
+<li><p><strong>Data Type</strong> (Input Menu) - Define the type of attribute to sample from the Loft Curves. Must match the type of the source attribute name.</p></li>
+<li><p><strong>Domain</strong> (Input Menu)</p></li>
+<li><p><strong>Attribute</strong> (Input String) - Name of the attribute to transfer from the Loft Surface. This attribute must exist on the source surface.</p></li>
+<li><p><strong>Store Attribute</strong> (Input String) - Name of an custom attribute to store on geometry.</p></li>
+<li><p><strong>Value</strong> (Input Float)</p></li>
+<li><p><strong>Value</strong> (Input Int)</p></li>
+<li><p><strong>Value</strong> (Input Vector)</p></li>
+<li><p><strong>Value</strong> (Input Color)</p></li>
+<li><p><strong>Value</strong> (Input Bool)</p></li>
+<li><p><strong>Value</strong> (Input Rotation)</p></li>
+<li><p><strong>Value</strong> (Input Matrix)</p></li>
+<li><p><strong>Group ID</strong> (Input Int) - Split the faces of the Loft Surface into groups which can be sampled individually.</p></li>
+<li><p><strong>Sample Position</strong> (Input Vector)</p></li>
+<li><p><strong>Sample Group ID</strong> (Input Int) - Split input Geometry into groups which can be sampled individually by its corresponding Loft Surface group.</p></li>
+<li><p>Blur:</p>
+<ul>
+<li><p><strong>Iterations</strong> (Input Int) - Number of blur passes to apply on the transferred attribute.</p></li>
+<li><p><strong>Lock Boundaries</strong> (Input Bool) - Prevents blurring across the boundary of surface. Useful for preventing crisp edges on open geometries.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="utilities">
+<h3>Utilities<a class="headerlink" href="#utilities" title="Link to this heading"></a></h3>
+<section id="loft-selection-tdltn">
+<h4>Loft Selection | TDLTN<a class="headerlink" href="#loft-selection-tdltn" title="Link to this heading"></a></h4>
+<p>Expand a per-point selection to an entire spline or loft group. If any control point in a group is selected, the entire group is selected.</p>
+<img alt="_images/Loft_Selection___TDLTN.png" src="_images/Loft_Selection___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Group Selection</strong> (Output Bool) - True if any point in the loft group is selected.</p></li>
+<li><p><strong>Spline Selection</strong> (Output Bool) - True if any point in the spline is selected.</p></li>
+<li><p><strong>Group ID Total</strong> (Output Int) - Number of selected points in the loft group.</p></li>
+<li><p><strong>Spline ID Total</strong> (Output Int) - Number of selected points in the spline.</p></li>
+<li><p><strong>Selection</strong> (Input Bool) - Boolean per-point selection. Determines which points are initially selected before propagation to their spline or group.</p></li>
+</ul>
+</section>
+<section id="loft-uv-map-tdltn">
+<h4>Loft UV Map | TDLTN<a class="headerlink" href="#loft-uv-map-tdltn" title="Link to this heading"></a></h4>
+<p>Generate UV coordinates for lofted surfaces with customizable behavior along both U and V directions.</p>
+<img alt="_images/Loft_UV_Map___TDLTN.png" src="_images/Loft_UV_Map___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>UVMap</strong> (Output Vector) - 2D coordinates for use in shaders, texturing, or baking.</p></li>
+<li><p><strong>U mapping mode</strong> (Input Menu) - Determines how UVs are calculated along the U direction (loft path or horizontal axis).</p></li>
+<li><p><strong>V mapping mode</strong> (Input Menu) - Determines how UVs are calculated along the V direction (cross-section or vertical axis).</p></li>
+<li><p><strong>Flip UV</strong> (Input Bool) - Swaps U and V axes in the generated UV map. Useful for correcting orientation or aligning textures.</p></li>
+</ul>
+</section>
+</section>
+<section id="sample">
+<h3>Sample<a class="headerlink" href="#sample" title="Link to this heading"></a></h3>
+<section id="index-of-loft-curve-tdltn">
+<h4>Index of Loft Curve | TDLTN<a class="headerlink" href="#index-of-loft-curve-tdltn" title="Link to this heading"></a></h4>
+<p>Output the index of the Loft Curves control points for the generated loft geometry.</p>
+<img alt="_images/Index_of_Loft_Curve___TDLTN.png" src="_images/Index_of_Loft_Curve___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Index</strong> (Output Int)</p></li>
+<li><p><strong>Loft Curves</strong> (Input Geometry) - Curves generated by the Loft Curves node. Each vertex on the lofted surface will be matched to one of these curves to determine its source index.</p></li>
+<li><p><strong>Sample Method</strong> (Input Menu)</p></li>
+<li><p><strong>Axis</strong> (Input Menu)</p></li>
+<li><p><strong>Axis</strong> (Input Menu)</p></li>
+<li><p><strong>Sample Position</strong> (Input Vector)</p></li>
+</ul>
+</section>
+<section id="loft-nurbs-tdltn">
+<h4>Loft NURBS | TDLTN<a class="headerlink" href="#loft-nurbs-tdltn" title="Link to this heading"></a></h4>
+<p>Retrieves NURBS properties from the generated loft curves from Loft Curves node. Useful for inspecting or reusing NURBS data such as order, knot mode, and control point weights.</p>
+<img alt="_images/Loft_NURBS___TDLTN.png" src="_images/Loft_NURBS___TDLTN.png" />
+<p>Sockets:</p>
+<ul class="simple">
+<li><p><strong>Loft Curves</strong> (Input Geometry) - Curves generated by the Loft Curves node. Each vertex on the lofted surface will be matched to one of these curves to determine its source index.</p></li>
+<li><p>V:</p>
+<ul>
+<li><p><strong>Order</strong> (Output Int)</p></li>
+<li><p><strong>Knots Mode</strong> (Output Int)</p></li>
+<li><p><strong>Weight</strong> (Output Float)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h2>
+<section id="add-preset-objects">
+<h3>Add Preset Objects<a class="headerlink" href="#add-preset-objects" title="Link to this heading"></a></h3>
+<section id="add-loft-empty">
+<h4>Add Loft Empty<a class="headerlink" href="#add-loft-empty" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_empty</span></code></p>
+<p>Add preset object “Empty Loft” from the add-on’s library.</p>
+</section>
+<section id="add-loft-bezier-tube">
+<h4>Add Loft Bézier Tube<a class="headerlink" href="#add-loft-bezier-tube" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_bezier_tube</span></code></p>
+<p>Add preset object “Loft Bezier Tube” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_bezier_tube.png" src="_images/CURVES_OT_tdlt_loft_add_bezier_tube.png" />
+</section>
+<section id="add-loft-bezier-torus">
+<h4>Add Loft Bézier Torus<a class="headerlink" href="#add-loft-bezier-torus" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_bezier_torus</span></code></p>
+<p>Add preset object “Loft Bezier Torus” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_bezier_torus.png" src="_images/CURVES_OT_tdlt_loft_add_bezier_torus.png" />
+</section>
+<section id="add-loft-bezier-surface">
+<h4>Add Loft Bézier Surface<a class="headerlink" href="#add-loft-bezier-surface" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_bezier_surface</span></code></p>
+<p>Add preset object “Loft Bezier Surface” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_bezier_surface.png" src="_images/CURVES_OT_tdlt_loft_add_bezier_surface.png" />
+</section>
+<section id="add-loft-poly-cube">
+<h4>Add Loft Poly Cube<a class="headerlink" href="#add-loft-poly-cube" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_poly_cube</span></code></p>
+<p>Add preset object “Loft Poly Cube” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_poly_cube.png" src="_images/CURVES_OT_tdlt_loft_add_poly_cube.png" />
+</section>
+<section id="add-loft-loft-cone">
+<h4>Add Loft Loft Cone<a class="headerlink" href="#add-loft-loft-cone" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_cone</span></code></p>
+<p>Add preset object “Loft Cone” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_cone.png" src="_images/CURVES_OT_tdlt_loft_add_cone.png" />
+</section>
+<section id="add-loft-loft-cylinder">
+<h4>Add Loft Loft Cylinder<a class="headerlink" href="#add-loft-loft-cylinder" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_cylinder</span></code></p>
+<p>Add preset object “Loft Cylinder” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_cylinder.png" src="_images/CURVES_OT_tdlt_loft_add_cylinder.png" />
+</section>
+<section id="add-loft-catmull-rom-cylinder">
+<h4>Add Loft Catmull-Rom Cylinder<a class="headerlink" href="#add-loft-catmull-rom-cylinder" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_crom_cylinder</span></code></p>
+<p>Add preset object “Loft CRom Cylinder” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_crom_cylinder.png" src="_images/CURVES_OT_tdlt_loft_add_crom_cylinder.png" />
+</section>
+<section id="add-loft-nurbs-cone">
+<h4>Add Loft NURBS Cone<a class="headerlink" href="#add-loft-nurbs-cone" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_add_nurbs_cone</span></code></p>
+<p>Add preset object “Loft NURBS Cone” from the add-on’s library.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_add_nurbs_cone.png" src="_images/CURVES_OT_tdlt_loft_add_nurbs_cone.png" />
+</section>
+</section>
+<section id="loft-un-loft">
+<h3>Loft / Un-Loft<a class="headerlink" href="#loft-un-loft" title="Link to this heading"></a></h3>
+<section id="loft-curves">
+<h4>Loft Curves<a class="headerlink" href="#loft-curves" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_apply</span></code></p>
+<p>Add loft geometry modifier and attributes to the selected curves.</p>
+</section>
+<section id="un-loft-curves">
+<h4>Un-Loft Curves<a class="headerlink" href="#un-loft-curves" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_unloft_apply</span></code></p>
+<p>Remove loft geometry modifier and attributes from the selected curves.</p>
+</section>
+</section>
+<section id="ui">
+<h3>UI<a class="headerlink" href="#ui" title="Link to this heading"></a></h3>
+<section id="call-loft-curves-menu">
+<h4>Call Loft Curves Menu<a class="headerlink" href="#call-loft-curves-menu" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_menu</span></code></p>
+<p>Call main menu.</p>
+<p><strong>Properties:</strong></p>
+<ul class="simple">
+<li><p><strong>Pie</strong> (Boolean) - Use Pie menu style.</p></li>
+</ul>
+<img alt="_images/CURVES_OT_tdlt_menu.png" src="_images/CURVES_OT_tdlt_menu.png" />
+</section>
+<section id="call-loft-curves-handles-transform-menu">
+<h4>Call Loft Curves Handles Transform Menu<a class="headerlink" href="#call-loft-curves-handles-transform-menu" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_handles_transform_menu</span></code></p>
+<p>Call handles transform menu.</p>
+<img alt="_images/CURVES_OT_tdlt_handles_transform_menu.png" src="_images/CURVES_OT_tdlt_handles_transform_menu.png" />
+</section>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h3>
+<section id="store-loft-attributes">
+<h4>Store Loft Attributes<a class="headerlink" href="#store-loft-attributes" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_attributes_store</span></code></p>
+<p>Set loft attributes with default values to the selected curves.</p>
+</section>
+<section id="remove-loft-attributes">
+<h4>Remove Loft Attributes<a class="headerlink" href="#remove-loft-attributes" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_attributes_remove</span></code></p>
+<p>Remove loft attributes from the selected curves.</p>
+</section>
+</section>
+<section id="curve-handle-types">
+<h3>Curve &amp; Handle Types<a class="headerlink" href="#curve-handle-types" title="Link to this heading"></a></h3>
+<section id="set-loft-curve-type">
+<h4>Set Loft Curve Type<a class="headerlink" href="#set-loft-curve-type" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_curve_type_set</span></code></p>
+<p>Set the selected curves type on the U/V axis.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Both U and V axes</p></li>
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Curve Type</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Catmull Rom</strong> - Catmull Rom</p></li>
+<li><p><strong>Poly</strong> - Poly</p></li>
+<li><p><strong>Bézier</strong> - Bézier</p></li>
+<li><p><strong>NURBS</strong> - NURBS</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The types on the V axes are stored and processed in the same manner as the
+regular curves, with geometry attributes. See the descriptions of each type
+in the Blender Manual: <a class="reference external" href="https://docs.blender.org/manual/en/4.5/modeling/curves_new/structure.html#spline-types">Spline Types</a></p>
+</section>
+<section id="set-loft-handle-type">
+<h4>Set Loft Handle Type<a class="headerlink" href="#set-loft-handle-type" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_handle_type_set</span></code></p>
+<p>Set the selected Bézier curve handle types. Hold Shift to modify only left handle, Alt - right handle.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Both U and V axes</p></li>
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Handle Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Left and right handles</p></li>
+<li><p><strong>Left</strong> - Only left handle</p></li>
+<li><p><strong>Right</strong> - Only right handle</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Handle Type</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Free</strong> - Free</p></li>
+<li><p><strong>Auto</strong> - Auto</p></li>
+<li><p><strong>Vector</strong> - Vector</p></li>
+<li><p><strong>Align</strong> - Aligned</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The types on the V axes are stored and processed in the same manner as the
+regular handles, with geometry attributes. See the descriptions of each type
+in Blender Manual: <a class="reference external" href="https://docs.blender.org/manual/en/4.5/modeling/curves_new/structure.html#handle-types">Handle Types</a></p>
+</section>
+</section>
+<section id="groups">
+<h3>Groups<a class="headerlink" href="#groups" title="Link to this heading"></a></h3>
+<section id="select-loft-group">
+<h4>Select Loft Group<a class="headerlink" href="#select-loft-group" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_group_select</span></code></p>
+<p>Select curves in the same loft group.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_group_select.gif" src="_images/CURVES_OT_tdlt_loft_group_select.gif" />
+</section>
+<section id="merge-loft-group">
+<h4>Merge Loft Group<a class="headerlink" href="#merge-loft-group" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_group_merge</span></code></p>
+<p>Merge loft group of the selected curves.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_group_merge.gif" src="_images/CURVES_OT_tdlt_loft_group_merge.gif" />
+</section>
+<section id="separate-loft-group">
+<h4>Separate Loft Group<a class="headerlink" href="#separate-loft-group" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_group_separate</span></code></p>
+<p>Separate the selected curves from the loft group.</p>
+<img alt="_images/CURVES_OT_tdlt_loft_group_separate.gif" src="_images/CURVES_OT_tdlt_loft_group_separate.gif" />
+</section>
+<section id="sort-loft-curves-in-group">
+<h4>Sort Loft Curves in Group<a class="headerlink" href="#sort-loft-curves-in-group" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_group_sort</span></code></p>
+<p>Reorder the selected curves in the loft group.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Offset</strong> (Integer)</p></li>
+<li><p><strong>U Selection Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Group</strong> - Curves group, single lofted surface</p></li>
+<li><p><strong>Segment</strong> - Individual curves</p></li>
+<li><p><strong>Point</strong> - Individual points</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Offset Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Offset</strong></p></li>
+<li><p><strong>First</strong></p></li>
+<li><p><strong>Last</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="sort-by-nearest">
+<h4>Sort by Nearest<a class="headerlink" href="#sort-by-nearest" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_group_sort_by_nearest</span></code></p>
+<p>Sort curves in the loft group automatically.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Utilities<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="toggle-loft-cyclic">
+<h4>Toggle Loft Cyclic<a class="headerlink" href="#toggle-loft-cyclic" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_cyclic_toggle</span></code></p>
+<p>Close/open the selected loft curve loop on the U/V axis.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Selection Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Group</strong> - Curves group, single lofted surface</p></li>
+<li><p><strong>Curve</strong> - Individual curves</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>NURBS Endpoints</strong> (Boolean)</p></li>
+<li><p><strong>NURBS Knots Mode</strong> (Boolean)</p></li>
+</ul>
+</section>
+<section id="switch-loft-direction">
+<h4>Switch Loft Direction<a class="headerlink" href="#switch-loft-direction" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_direction_switch</span></code></p>
+<p>Reverse the direction of the selected curves on the U/V axis.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Selection Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Group</strong> - Curves group, single lofted surface</p></li>
+<li><p><strong>Curve</strong> - Individual curves</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Switch</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Group</strong></p></li>
+<li><p><strong>Segment</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Sort</strong> (Boolean)</p></li>
+</ul>
+</section>
+<section id="subdivide-loft-segments">
+<h4>Subdivide Loft Segments<a class="headerlink" href="#subdivide-loft-segments" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_segments_subdivide</span></code></p>
+<p>Subdivide the selected loft V segments or U curves.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Number of Cuts</strong> (Integer)</p></li>
+</ul>
+</section>
+<section id="duplicate-in-loft-group">
+<h4>Duplicate in Loft Group<a class="headerlink" href="#duplicate-in-loft-group" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_duplicate</span></code></p>
+<p>Duplicate the selected curves.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Duplicate Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>After</strong> - Duplicate at the higher index</p></li>
+<li><p><strong>Before</strong> - Duplicate at the lower index</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="duplicate-separated-from-loft-group-and-move">
+<h4>Duplicate Separated from Loft Group and Move<a class="headerlink" href="#duplicate-separated-from-loft-group-and-move" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_duplicate_separate_move</span></code></p>
+<p>Duplicate the selected curves into a new loft group and start moving.</p>
+</section>
+<section id="duplicate-in-loft-group-and-move">
+<h4>Duplicate in Loft Group and Move<a class="headerlink" href="#duplicate-in-loft-group-and-move" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_duplicate_move</span></code></p>
+<p>Duplicate the selected curves and start moving.</p>
+</section>
+</section>
+<section id="id2">
+<h3>NURBS<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="set-loft-nurbs-order">
+<h4>Set Loft NURBS Order<a class="headerlink" href="#set-loft-nurbs-order" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_nurbs_order_set</span></code></p>
+<p>Set the selected loft curves NURBS order on the U/V axis.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Delta</strong> (Integer)</p></li>
+<li><p><strong>Reset Order</strong> (Boolean)</p></li>
+</ul>
+</section>
+<section id="set-loft-nurbs-knots-mode">
+<h4>Set Loft NURBS Knots Mode<a class="headerlink" href="#set-loft-nurbs-knots-mode" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_nurbs_knots_mode_set</span></code></p>
+<p>Set the selected loft curves NURBS knots mode on the U/V axis.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Tool Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Endpoint Toggle</strong></p></li>
+<li><p><strong>Bézier Toggle</strong></p></li>
+<li><p><strong>Set</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Endpoint</strong> (Boolean) - Make this NURBS curve meet the endpoints.</p></li>
+<li><p><strong>Bézier</strong> (Boolean) - Make this NURBS curve act like a Bézier spline.</p></li>
+</ul>
+</section>
+<section id="set-loft-nurbs-weight">
+<h4>Set Loft NURBS Weight<a class="headerlink" href="#set-loft-nurbs-weight" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_nurbs_weight_set</span></code></p>
+<p>Set NURBS weight for the selected loft curves.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Axis</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>U</strong> - Profile axis, control curves to use as lofting base</p></li>
+<li><p><strong>V</strong> - Generated loft axis</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Weight</strong> (Float)</p></li>
+</ul>
+</section>
+</section>
+<section id="bezier-handles">
+<h3>Bezier Handles<a class="headerlink" href="#bezier-handles" title="Link to this heading"></a></h3>
+<section id="translate-loft-handles">
+<h4>Translate Loft Handles<a class="headerlink" href="#translate-loft-handles" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_handles_translate</span></code></p>
+<p>Translate loft handles.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Handle Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Left and right handles</p></li>
+<li><p><strong>Left</strong> - Only left handle</p></li>
+<li><p><strong>Right</strong> - Only right handle</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Orientation</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Global</strong></p></li>
+<li><p><strong>Local</strong></p></li>
+<li><p><strong>Loft Normal</strong></p></li>
+<li><p><strong>View</strong></p></li>
+<li><p><strong>Cursor</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Translation</strong> (Float)</p></li>
+</ul>
+</section>
+<section id="rotate-loft-handles">
+<h4>Rotate Loft Handles<a class="headerlink" href="#rotate-loft-handles" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_handles_rotate</span></code></p>
+<p>Rotate loft handles.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Handle Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Left and right handles</p></li>
+<li><p><strong>Left</strong> - Only left handle</p></li>
+<li><p><strong>Right</strong> - Only right handle</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Orientation</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Global</strong></p></li>
+<li><p><strong>Local</strong></p></li>
+<li><p><strong>Loft Normal</strong></p></li>
+<li><p><strong>View</strong></p></li>
+<li><p><strong>Cursor</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Rotation</strong> (Float)</p></li>
+</ul>
+</section>
+<section id="scale-loft-handles">
+<h4>Scale Loft Handles<a class="headerlink" href="#scale-loft-handles" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_handles_scale</span></code></p>
+<p>Scale loft handles.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Handle Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Both</strong> - Left and right handles</p></li>
+<li><p><strong>Left</strong> - Only left handle</p></li>
+<li><p><strong>Right</strong> - Only right handle</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Orientation</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Global</strong></p></li>
+<li><p><strong>Local</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Scale</strong> (Float)</p></li>
+</ul>
+</section>
+</section>
+<section id="handles">
+<h3>Handles<a class="headerlink" href="#handles" title="Link to this heading"></a></h3>
+<section id="align-loft-handles-to-cursor">
+<h4>Align Loft Handles to Cursor<a class="headerlink" href="#align-loft-handles-to-cursor" title="Link to this heading"></a></h4>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">curves.tdlt_loft_handles_align_to_cursor</span></code></p>
+<p>Align loft handles to cursor.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p><strong>Alignment Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Position</strong></p></li>
+<li><p><strong>Rotation Only</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Handle Mode</strong> (Enumeration)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Left</strong> - Only left handle</p></li>
+<li><p><strong>Right</strong> - Only right handle</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="gizmos">
+<h2>Gizmos<a class="headerlink" href="#gizmos" title="Link to this heading"></a></h2>
+<section id="loft-bezier-handles">
+<h3>Loft Bézier Handles<a class="headerlink" href="#loft-bezier-handles" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_GGT_tdlt_loft_bezier_handles</span></code></p>
+<p>Space: 3D Viewport</p>
+<p>Region: Window</p>
+<p>Gizmos to move Bézier handles on Loft V axis.</p>
+<img alt="_images/CURVES_GGT_tdlt_loft_bezier_handles.png" src="_images/CURVES_GGT_tdlt_loft_bezier_handles.png" />
+<p>Note that the API’s support for Gizmos is still fairly restrictive.
+So it is not possible to fully replicate the functionality of the native
+handles with an add-on. This system is for approximate manipulation only
+by hand, and for the more precise control of handles, use the dedicated
+“Translate/Rotate/Scale Loft Handles” operators where you can input exact
+offsets and other parameters.</p>
+<p>Also, the gizmos are only available in Point selection mode for a single
+selected point. Full support for multiple handles and all selection modes
+is coming in the future updates.</p>
+</section>
+</section>
+<section id="menus">
+<h2>Menus<a class="headerlink" href="#menus" title="Link to this heading"></a></h2>
+<section id="loft-tools">
+<h3>Loft Tools<a class="headerlink" href="#loft-tools" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_MT_tdlt_main</span></code></p>
+<p>Main menu with all essential operators.</p>
+</section>
+<section id="id3">
+<h3>Loft Tools<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_MT_PIE_tdlt_main</span></code></p>
+<p>Main pie menu with all essential operators.</p>
+<img alt="_images/CURVES_MT_PIE_tdlt_main.png" src="_images/CURVES_MT_PIE_tdlt_main.png" />
+</section>
+<section id="loft-handles-transform">
+<h3>Loft Handles Transform<a class="headerlink" href="#loft-handles-transform" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_MT_tdlt_handles_transform</span></code></p>
+<p>Loft Handles Transform menu: Translate, Rotate, Scale.</p>
+</section>
+<section id="id4">
+<h3>Loft Handles Transform<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_MT_PIE_tdlt_handles_transform</span></code></p>
+<p>Loft Handles Transform pie menu: Translate, Rotate, Scale.</p>
+</section>
+</section>
+<section id="panels">
+<h2>Panels<a class="headerlink" href="#panels" title="Link to this heading"></a></h2>
+<section id="loft-tools-loft-tools">
+<h3>Loft Tools &gt; Loft Tools<a class="headerlink" href="#loft-tools-loft-tools" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_PT_tdlt_main</span></code></p>
+<p>Space: 3D Viewport</p>
+<p>Region: Sidebar</p>
+<p>Loft Curves panel with all essential operators..</p>
+<img alt="_images/CURVES_PT_tdlt_main.png" src="_images/CURVES_PT_tdlt_main.png" />
+</section>
+<section id="loft-tools-loft-tools-preferences">
+<h3>Loft Tools &gt; Loft Tools Preferences<a class="headerlink" href="#loft-tools-loft-tools-preferences" title="Link to this heading"></a></h3>
+<p>Identifier: <code class="docutils literal notranslate"><span class="pre">CURVES_PT_tdlt_preferences</span></code></p>
+<p>Space: 3D Viewport</p>
+<p>Region: Sidebar</p>
+<p>Loft Tools preferences panel for 3D Viewport..</p>
+</section>
+</section>
+<section id="key-bindings">
+<h2>Key-bindings<a class="headerlink" href="#key-bindings" title="Link to this heading"></a></h2>
+<section id="curves">
+<h3>Curves<a class="headerlink" href="#curves" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Call Loft Curves Menu</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">V</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Call Loft Curves Handles Transform Menu</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">Alt</span> <span class="pre">V</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Select Loft Group</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">Alt</span> <span class="pre">L</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Toggle Loft Cyclic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">Alt</span> <span class="pre">C</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Duplicate Separated from Loft Group and Move</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Alt</span> <span class="pre">D</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Duplicate in Loft Group and Move</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">D</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Duplicate in Loft Group and Move</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Ctrl</span> <span class="pre">D</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+Overview
+########
+
+At the core of the add-on, there is a set of Geometry Nodes: regular ones,
+and `Tool Nodes`_ (introduced in Blender 4.0). Together with the Python code,
+they create a comprehensive modelling system for curve lofting.
+
+.. _Tool Nodes: https://developer.blender.org/docs/release_notes/4.0/geometry_nodes/#node-based-tools
+
+Core Nodes
+==========
+
+.. image:: /_static/images/frames/Frame__Loft_Nodes.png
+
+The core nodes are marked as Assets. By linking the nodes from
+``Loft Tools.blend`` into your file, you can use them in custom node
+trees.
+
+Tool Nodes
+==========
+
+.. image:: /_static/images/edit_mode_tools_menu.png
+
+The Tool nodes together with the add-on's Python part create a powerful
+manual modelling system.
+
+They are also marked as Assets and available from a menu in the Curves Edit Mode.
+Blender adds the menu automatically reading the hierarchy from the asset library
+metadata objects. If you want to move or rename the menu, edit the catalog paths
+in the ``Loft Tools.blend``.
+
+Python Components
+=================
+
+The Python part of the add-on is focused on improving availability and the
+user interface of the core system.
+
+Handles
+:::::::
+
+The code adds gizmo-handle for curves created by the nodes. The gizmo edits the
+geometry attributes which define handles, similarly to how the built-in handles
+work, with some limitations.
+
+.. image:: /_static/images/handle_gizmo_1.png
+
+Operators
+:::::::::
+
+The main add-on's operators call Tool nodes.
+They also automatically link the library with the required nodes if not already linked.
+
+.. image:: /_static/images/f3_loft.png
+
+Interface
+:::::::::
+
+There is a panel and a pie menu with all the available operators in one convenient place.
+
+.. image:: /_static/images/sidebar_panel_and_menu_pie.png
+
+Asset Library Path
+::::::::::::::::::
+
+By enabling the add-on, the code adds the Asset Library automatically into your
+File Paths in the Preferences.
+
+.. image:: /_static/images/asset_library_file_path.png
+
+Hair Curves Requirement
+=======================
+
+We need to use the new (Hair) **Curves** data-block, introduced in 4.0,
+instead of the legacy **Curve**. This is required for new Node Tools to be able
+to create and edit original geometry attributes, as there is no support for that
+in the current regular Curve data-blocks.
